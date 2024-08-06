@@ -11,10 +11,7 @@ import org.testng.annotations.Test;
 
 import qa.base.base;
 
-public class WindowHandling extends base{
-	
-	
-	
+public class WindowHandling extends base {
 
 	WebDriver driver;
 
@@ -30,13 +27,13 @@ public class WindowHandling extends base{
 		driver.quit();
 
 	}
-	 @Test
-	 public void WindowHandlingTest()
-	 {
-		 driver.get("https://www.maccosmetics.com/mac-lover");
-		 driver.findElement(By.xpath("//a[contains(text(),'PRIVACY POLICY')]")).click();
-		 
-		Set <String> wh = driver.getWindowHandles();
+
+	@Test
+	public void WindowHandlingTest() {
+		driver.get("https://www.maccosmetics.com/mac-lover");
+		driver.findElement(By.xpath("//a[contains(text(),'PRIVACY POLICY')]")).click();
+
+		Set<String> wh = driver.getWindowHandles();
 		Iterator<String> it = wh.iterator();
 		String ParentId = it.next();
 		String childId = it.next();
@@ -44,11 +41,8 @@ public class WindowHandling extends base{
 		System.out.println(driver.getTitle());
 		driver.switchTo().window(ParentId);
 		System.out.println(driver.getTitle());
-		
-		
-		
-		 
-		 
-	 }
+	}
+	
+	
 
 }
